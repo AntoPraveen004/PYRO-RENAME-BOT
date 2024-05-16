@@ -1,28 +1,50 @@
-import re
-import os
-import time
+"""
+Apache License 2.0
+Copyright (c) 2022 @PYRO_BOTZ
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Telegram Link : https://t.me/PYRO_BOTZ 
+Repo Link : https://github.com/TEAM-PYRO-BOTZ/PYRO-RENAME-BOT
+License Link : https://github.com/TEAM-PYRO-BOTZ/PYRO-RENAME-BOT/blob/main/LICENSE
+"""
 
-id_pattern = re.compile(r'^.\d+$')
+import re, os, time
+
+id_pattern = re.compile(r'^.\d+$') 
 
 class Config(object):
     # pyro client config
-    API_ID = os.environ.get("API_ID", "20114671")
-    API_HASH = os.environ.get("API_HASH", "db35dedc1f6918b21f65f8435481355d")
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "6861349544:AAHPq4iyw_8y3wXKWZ5jDOkB1hIdivFmjaY")
+    API_ID    = os.environ.get("API_ID", "20114671")
+    API_HASH  = os.environ.get("API_HASH", "db35dedc1f6918b21f65f8435481355d")
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "6861349544:AAHPq4iyw_8y3wXKWZ5jDOkB1hIdivFmjaY") 
    
     # database config
     DB_NAME = os.environ.get("DB_NAME", "Cluster0")
-    DB_URL = os.environ.get("DB_URL", "mongodb+srv://densilraja:ZM1NE14X8Wa@cluster0.xoux857.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+    DB_URL  = os.environ.get("DB_URL", "mongodb+srv://densilraja:ZM1NE14X8Wa@cluster0.xoux857.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
  
     # other configs
-    BOT_UPTIME = time.time()
-    START_PIC = os.environ.get("START_PIC", "")
-    ADMIN = [int(admin) if id_pattern.search(admin) else admin for admin in os.environ.get('ADMIN', '').split()]
-    FORCE_SUB = os.environ.get("FORCE_SUB", "ffidsale2k23")
-    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", 0))  # Provide a default integer value
+    BOT_UPTIME  = time.time()
+    START_PIC   = os.environ.get("START_PIC", "")
+    ADMIN       = [int(admin) if id_pattern.search(admin) else admin for admin in os.environ.get('ADMIN', '').split()]
+    FORCE_SUB   = os.environ.get("FORCE_SUB", "ffidsale2k23")
+    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", None))
 
     # webhook response configuration     
     WEBHOOK = bool(os.environ.get("WEBHOOK", "True"))
+
+
 
 class Txt(object):
     # part of text configuration
@@ -79,3 +101,4 @@ Exᴀᴍᴩʟᴇ:- /set_caption 📕 Fɪʟᴇ Nᴀᴍᴇ: {filename}
 ┣⪼ 🚀 Sᴩᴇᴇᴅ: {3}/s
 ┣⪼ ⏰️ Eᴛᴀ: {4}
 ╰━━━━━━━━━━━━━━━➣ </b>"""
+
